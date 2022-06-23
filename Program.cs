@@ -145,7 +145,7 @@ namespace MyRecipes
         static void Main(string[] args)
         {
 
-            Console.WriteLine("iiiI".ChangeFirstLetter());
+            Console.WriteLine("IiiI".ChangeFirstLetter());
 
         }
     }

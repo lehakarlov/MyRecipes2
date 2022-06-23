@@ -12,31 +12,9 @@ namespace MyRecipes
     {
         public static string ChangeFirstLetter(this String s)
         {
-            if (s.Equals(string.Empty))
-            {
-                return string.Empty;
-            }
-            else
-            {
-                if (s.Length == 1)
-                {
-                    return s.ToUpper();
-                }
-                else if (s.Length > 1)
-                {
-
-                    string start = s[0].ToString().ToUpper();
-                    StringBuilder temp = new StringBuilder(start);
-                    temp.Append(string.Join("", s[1..]));
-                    return temp.ToString();
-
-                }
-                else
-                {
-                    return string.Empty;
-                }
-            }
-
+            char[] chars = s.ToCharArray();
+            chars[0] = char.IsUpper(chars[0]) ? (char.ToLower(chars[0])) : (char.ToUpper(chars[0]));
+            return new string(chars);
         }
     }
     internal class Linq
