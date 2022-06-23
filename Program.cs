@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MyRecipes
 {
@@ -78,6 +79,10 @@ namespace MyRecipes
                 }
 
             }
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(this.name, this.price);
+            }
         }
         public class Cart
         {
@@ -123,7 +128,22 @@ namespace MyRecipes
         static void Main(string[] args)
         {
 
-
+            IEnumerable<Product> products1 = new List<Product>
+            {
+                new Product() {name="1",price=200},
+                new Product() {name="2",price=220},
+            };
+            IEnumerable<Product> products2 = new List<Product>
+            {
+                new Product(){ name="1",price=200},
+                new Product() {name="3",price=220},
+                new Product() {name="2",price=220},
+            };
+            var allProducts = Linq.UnionCollectionProduct(products2, products1).OrderBy(x => x.name);
+            foreach (var item in allProducts)
+            {
+                Console.WriteLine(item.name + ";" + item.price);
+            }
             //
 
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MyRecipes.Program;
 
 namespace MyRecipes
 {
@@ -16,6 +17,13 @@ namespace MyRecipes
         {
             return collection1.Union(collection2);
         }
+
+        public static IEnumerable<Product> UnionCollectionProduct(IEnumerable<Product> c1, IEnumerable<Product> c2)
+        {
+            return c1.Union(c2);
+        }
+
+
 
     }
 }

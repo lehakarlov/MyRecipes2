@@ -28,7 +28,7 @@ namespace MyRecipes
         }
         public class Program
         {
-            public static void Main()
+            public static void INCovarianceArray()
             {
                 Dog[] dogs = { new Dog(), new Dog(), new Dog() };
                 for (int i = 0; i < dogs.Length; i++)
