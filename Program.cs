@@ -87,10 +87,8 @@ namespace MyRecipes
 
         }
 
-
-        static void Main(string[] args)
+        public void IndexatorMethod()
         {
-
             Cart cart = new Cart();
             cart[0] = new Product() { name = "one", price = 203 };
             cart[1] = new Product() { name = "two", price = 200 };
@@ -104,6 +102,12 @@ namespace MyRecipes
             Cart2 cart2 = new Cart2();
             cart2["f"] = new Product() { name = "oneCart2", price = 100 };
             Console.WriteLine(cart2["f"].name);
+        }
+
+        static void Main(string[] args)
+        {
+
+
             //
 
         }
