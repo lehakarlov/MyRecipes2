@@ -51,6 +51,7 @@ namespace MyRecipes
 
         public class Product
         {
+            #region ctor Product 
             public Product(string _name, decimal _price)
             {
                 this.name = _name;
@@ -60,8 +61,23 @@ namespace MyRecipes
             {
 
             }
+            #endregion
             public string name { get; set; }
             public decimal price { get; set; }
+
+            public override bool Equals(Object obj)
+            {
+                if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+                {
+                    return false;
+                }
+                else
+                {
+                    Product p = (Product)obj;
+                    return (p.name.Equals(this.name)) && (p.price == this.price);
+                }
+
+            }
         }
         public class Cart
         {
