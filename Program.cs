@@ -1,54 +1,15 @@
-﻿using System;
+﻿using MyRecipes.Repo;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using static MyRecipes.Indexator;
 
 namespace MyRecipes
 {
     internal class Program
     {
-        public class Myclass
-        {
-            private int[] array = new int[5];
-            public int this[int index]
-            {//
 
-                get => array[index];
-                set => array[index] = value;
-            }
-        }
-
-
-        public class Myclass2
-        {
-            private string[] array = new string[5];
-            public string this[int index]
-            {
-                get
-                {
-                    if (index >= 0 && index < array.Length)
-                    {
-                        return array[index];
-                    }
-                    else
-                    {
-                        //
-                        return "error";
-                    }
-                }
-                set
-                {
-                    if (index >= 0 && index < array.Length)
-                    {
-                        array[index] = value;
-                    }
-                    else
-                    {
-                        throw new IndexOutOfRangeException();
-                    }
-                }
-            }
-        }
 
         public class Product
         {
@@ -82,6 +43,11 @@ namespace MyRecipes
             public override int GetHashCode()
             {
                 return HashCode.Combine(this.name, this.price);
+            }
+            public override string ToString()
+            {
+                return string.Format("{0} is {1};{2} is {3}",
+                    nameof(this.name), this.name, nameof(this.price), this.price);
             }
         }
         public class Cart
@@ -145,7 +111,13 @@ namespace MyRecipes
         static void Main(string[] args)
         {
 
-            Console.WriteLine("IiiI".ChangeFirstLetter());
+            IndexatorDemo3 indexatorDemo3 = new IndexatorDemo3();
+            indexatorDemo3[0] = new Product() { name = "first name", price = 20 };
+            indexatorDemo3[1] = new Product() { name = "2P", price = 200 };
+
+            IndX4 indX4 = new IndX4();
+            indX4[0] = "s";
+            Console.WriteLine(indX4[0]);
 
         }
     }
