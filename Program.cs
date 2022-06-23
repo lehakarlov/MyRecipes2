@@ -91,7 +91,6 @@ namespace MyRecipes
 
             {
                 get => products[index];
-                //set
                 set => products[index] = value;
             }
 
@@ -124,10 +123,8 @@ namespace MyRecipes
             cart2["f"] = new Product() { name = "oneCart2", price = 100 };
             Console.WriteLine(cart2["f"].name);
         }
-
-        static void Main(string[] args)
+        public void DemoLinq()
         {
-
             IEnumerable<Product> products1 = new List<Product>
             {
                 new Product() {name="1",price=200},
@@ -144,7 +141,11 @@ namespace MyRecipes
             {
                 Console.WriteLine(item.name + ";" + item.price);
             }
-            //
+        }
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("iiiI".ChangeFirstLetter());
 
         }
     }
